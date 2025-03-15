@@ -9,11 +9,13 @@ export const letters = [
 export const professionTexts = ["a React JS", "a Front End"];
 
 export const socialIcons = [
-  { icon: "bx bxl-instagram-alt" },
-  { icon: "bx bxl-youtube" },
-  { icon: "bx bxl-twitter" },
-  { icon: "bx bxl-facebook-square" },
+  { icon: "bx bxl-instagram-alt", link: "https://www.instagram.com/shekhar22ji/" },
+  { icon: "bx bxl-youtube", link: "https://www.youtube.com/@shekharbirda6402" },
+  { icon: "bx bxl-twitter", link: "https://x.com/Shekharjaat15" },
+  { icon: "bx bxl-github", link: "https://github.com/SHEKHAR3512" }, // GitHub added
 ];
+
+
 
 export const aboutText = `Hi, I’m SHEKHAR, a passionate React Developer dedicated to building dynamic, user-friendly web applications.
 I specialize in React.js, Redux Toolkit, TypeScript, and Material-UI, with a strong focus on creating clean, maintainable, and efficient code.
