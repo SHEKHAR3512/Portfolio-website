@@ -5,7 +5,6 @@ import NavigationCircles from "./NavigationCircles";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
-
 const MySwal = withReactContent(Swal);
 
 const Contact = () => {
@@ -15,38 +14,29 @@ const Contact = () => {
     message: Yup.string().required("Message is required"),
   });
 
-  const API_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+  const onSubmit = async (values, { resetForm }) => {
+    const formData = { ...values, access_key: "5bf5fa29-6102-4947-9772-4e6416858e69" };
 
-const onSubmit = async (event) => {
-  event.preventDefault();
-  const formData = new FormData(event.target);
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formData),
+    }).then((res) => res.json());
 
-  formData.append("access_key", "5bf5fa29-6102-4947-9772-4e6416858e69");
-
-  const object = Object.fromEntries(formData);
-  const json = JSON.stringify(object);
-
-  const res = await fetch(`${API_URL}/send-email`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    },
-    body: json
-  }).then((res) => res.json());
-
-  if (res.success) {
-    MySwal.fire({
-      title: "Email Sent Successfully",
-      icon: "success",
-      backdrop: false,
-      background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#ffffff",
-      color: document.documentElement.classList.contains('dark') ? "#fbbf24" : "#000000",
-    });
-    resetForm();
-  }
-};
-
+    if (res.success) {
+      MySwal.fire({
+        title: "Email Sent Successfully",
+        icon: "success",
+        backdrop: false,
+        background: document.documentElement.classList.contains('dark') ? "#1f2937" : "#ffffff",
+        color: document.documentElement.classList.contains('dark') ? "#fbbf24" : "#000000",
+      });
+      resetForm();
+    }
+  };
 
   return (
     <div id="contact" className="h-screen flex flex-col justify-center items-center">
