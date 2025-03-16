@@ -40,6 +40,7 @@ const Contact = () => {
 
   return (
     <div id="contact" className="h-screen flex flex-col justify-center items-center">
+      <div>
       <h2 className="text-4xl font-light md:mb-32 mb-24">Connect With Me</h2>
       <Formik
         initialValues={{ name: "", email: "", message: "" }}
@@ -85,7 +86,8 @@ const Contact = () => {
           </Form>
         )}
       </Formik>
-      <NavigationCircles section="contact" />
+    </div>
+    <NavigationCircles section="contact" />
     </div>
   );
 };

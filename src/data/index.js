@@ -5,6 +5,36 @@ export const letters = [
   { char: "l",  },
   { char: "o",  },
 ];
+export const projects = [
+  { 
+    id: 1, 
+    title: "Portfolio Website", 
+    tech: "React, Tailwind", 
+    link: "https://portfolio-website-71qk.onrender.com/",
+    description: "A personal portfolio website to showcase projects, skills, and experience." 
+  },
+  { 
+    id: 2, 
+    title: "E-commerce App", 
+    tech: "Next.js, TypeScript", 
+    link: "#",
+    description: "A fully functional e-commerce platform with product listings, cart, and checkout."
+  },
+  { 
+    id: 3, 
+    title: "Daily-Dispatch", 
+    tech: "React,Axios", 
+    link: "https://daily-dispatch.onrender.com",
+    description: "Daily-Dispatch is a News Web-site made with react and Axios."
+  },
+  { 
+    id: 4, 
+    title: "Task Manager", 
+    tech: "React, Firebase", 
+    link: "#",
+    description: "A task management app to organize daily tasks with cloud storage support."
+  }
+];
 
 export const professionTexts = ["a React JS", "a Front End"];
 

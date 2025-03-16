@@ -4,6 +4,7 @@ import Services from './components/Services'
 import Contact from './components/Contact'
 import { Loader } from './components/Loader'
 import { ThemeProvider } from './context/ThemeContext'
+import ProjectShowcase from "./components/Project"
 function App() {
   const [isLoading,setIsLoading]=useState(true)
   useEffect(()=>{
@@ -20,6 +21,7 @@ return ()=>clearTimeout(timer)
       {!isLoading && ( <>
       <Hero />
       <Services />
+      <ProjectShowcase />
       <Contact />
       </>)}
      
